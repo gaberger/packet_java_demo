@@ -4,6 +4,8 @@
         org.clojure/tools.cli {:mvn/version "0.4.1"}
         com.taoensso/timbre {:mvn/version "4.10.0"}
         net.packet/java-client {:mvn/version "1.0.0"}
+        com.fzakaria/slf4j-timbre {:mvn/version "0.3.12"}
+        org.slf4j/slf4j-api {:mvn/version "1.7.14"}
         ;org.apache.jclouds/jclouds-all {:mvn/version "2.1.1"}
         eftest {:mvn/version "0.5.2"}
         }

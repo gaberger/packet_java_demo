@@ -1,4 +1,4 @@
-(ns packet_java_demo.core
+(ns packet-java-demo.core
   (:import  (net.packet BillingCycle)
             (net.packet.impl PacketClient)
             (net.packet.pojo Device
@@ -6,8 +6,13 @@
                              Facility
                              Plan))
   (:require [clojure.java.io :as io]
-            [clojure.tools.cli :refer [parse-opts]])
+            [clojure.tools.cli :refer [parse-opts]]
+            [taoensso.timbre :as timbre]
+            [taoensso.timbre.appenders.core :as appenders]
+            )
   (:gen-class))
+
+(timbre/refer-timbre)
 
 (def proj-id "6b411677-07ed-4172-b351-3798dbc7ca39"); VZ Demo Project
 
@@ -52,6 +57,5 @@
       errors                 (println "Something went wrong")
       (nil? (:host options)) (println "Please specify a hostname"))
     (let [{:keys [help host os facility]} options
-          _ (println (str host os facility))
           id                              (launch-server auth-token proj-id host os facility)]
       (println id))))
