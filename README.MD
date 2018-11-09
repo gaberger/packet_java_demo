@@ -49,5 +49,19 @@ Leaving the defaults just specify a _hostname_
 
 
 
+## Application Installation Demo
 
+This repo leveragess Packet's *cloud-init* integration.
+
+We update our device model with a cloud-config file 
+        (see packet_java_demo/resources/cloud-config)
+        
+The example below installs nginx        
+        
+~~~
+#cloud-config
+package_upgrade: true
+packages:
+   -  nginx   
+~~~      
 
